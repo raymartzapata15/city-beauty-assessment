@@ -1,0 +1,278 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+label {
+    color: #FFFFFF;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: Unna;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 43px;
+}
+
+h2 { 
+    font-size: 25px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 17px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cb-container {
+    background-color: #0C233F;
+    min-height: 100vh;
+    padding-bottom: 86px;
+}
+
+.cb-border {
+    border: 1px solid #556579;
+    width: 100%;
+}
+
+.cb-semi-bold {
+    font-weight: 600;
+}
+
+.cb-bold {
+    font-weight: 700;
+}
+
+/* 
+    Button
+*/
+
+.cb-button-continue,
+.cb-button-skip {
+    height: 83px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.cb-button-continue {
+    border: none;
+    background-color: #E2C47C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 37px;
+}
+
+.cb-button-continue:disabled {
+    opacity: 0.6;
+}
+
+.cb-button-continue p {
+    color: #333333;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.cb-button-skip {
+    border: 1px solid #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.cb-button-skip p {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+/* 
+    Card
+*/
+.cb-card {
+    background-color: #556479;
+    box-sizing: border-box;
+    display: flex;
+    padding-left: 33px;
+    align-items: center;
+    justify-content: space-between;
+    height: 135px;
+    width: 517px;
+    margin-bottom: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.cb-card.selected {
+    border: 2px solid #E2C47C;
+}
+
+.cb-card:hover {
+    background-color: #394A62;
+}
+
+.cb-card h3 {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.cb-card .cb-card-display-image {
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+/* 
+    Checkbox
+*/
+.cb-checkbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 50px;
+    cursor: pointer;
+}
+
+.cb-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.cb-checkmark {
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    transform: translateY(-50%);
+}
+
+.cb-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.cb-checkbox input:checked ~ .cb-checkmark:after {
+    display: block;
+}
+
+.cb-checkbox .cb-checkmark:after {
+    background-image: url('../images/check.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 35px;
+    width: 23px;
+    left: 5px;
+    top: 3px;
+}
+
+/* 
+    Radio Button
+*/
+.cb-radio {
+    position: relative;
+    padding-left: 50px;
+}
+
+.cb-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.cb-radio-checkmark {
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+}
+
+.cb-card.selected .cb-radio-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.cb-card.selected .cb-radio input ~ .cb-radio-checkmark:after {
+    display: block;
+}
+
+.cb-card.selected .cb-radio .cb-radio-checkmark:after {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #E2C47C;
+}
+
+/* 
+    Header
+*/
+.cb-header {
+    display: flex;
+    justify-content: center;
+    padding-top: 21px;
+}
+
+.cb-header img {
+    height: 36px;
+    width: 85px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .cb-container {
+        height: 100%;
+    }
+
+    .cb-card {
+        padding-left: 26px;
+        width: 335px;
+    }
+
+    .cb-card .cb-card-display-image {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+
+    .cb-button-container {
+        width: 335px;
+    }
+}
